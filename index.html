@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Task Planner</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon/favicon-32x32.png">
     <!-- BootStrap CSS only: -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <!-- fontawesome icon CSS: -->
@@ -35,6 +36,21 @@
                         <li class="nav-item">
                             <a class="nav-link fw-bold" href="#todo">Task</a>
                         </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle fw-bold" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            View
+                            </a>
+                            <ul class="dropdown-menu">
+                            <li><h5 class="text-center">Stage:</h5></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#todo">TO-DO</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#doing">DOING</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#done">DONE</a></li>
+                            </ul>
+                        </li>
+                        
                         <!-- Option menu below can let user select the task then use below function to: e.g move, delete, all-delete(clear all) tasks: -->
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle fw-bold" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -62,585 +78,599 @@
 
     <!-- TaskPlanning area -->
     <div class="taskPlanning">
-        <div class="todo-backlog" id="todo">
-            <h1>To do</h1>
-            <div class="todo-Tab">
-                <div class="card-col-todo">
-                    <div class="content-Container container-fluid">
-                        <div class="add-btn-Container container">
-                            <button class="btn btn-dark addtask-btn" data-bs-toggle="modal" data-bs-target="#addTask" type="button">+</button> <br>
-                        </div>
-                            
-                        <div class="task-list-todo-container">
-                            
-                            <!-- task list display in HTML should stay consistency with this design: -->
-                            <ul class="task-list-todo-content">
-                                <!-- This area should add user task: -->
-
-                                <li class="list-todo list-todo-item-1 "></li>
-                                    <a class="btn btn-outline-dark" data-bs-toggle="collapse" href="#collapse-todo-task-1" role="button" aria-expanded="false" aria-controls="collapse" style="width: 400px";>
-
-                                        <div class="task-title-badge">
-                                            <h5 class="task-collapse-title">
-                                                Project - Task1
-                                                <span class="badge bg-secondary">Pending</span>
-                                            </h5>
-                                        </div>
-                                        <div class="task-collapse-assignto">
-                                            <h6>
-                                                Assigned to: Example Wong
-                                            </h6>
-                                        </div>
-                                    </a>
-
-                                    <!-- collapse- clicked will show all details with this task: -->
-                                    <div class="collapse todo-task-1-content" id="collapse-todo-task-1">
-                                        <div class="card card-body todo-task-1-details" style="width: 400px;">
-                                            <div class="task-title-container">
-                                                <h5 class="title-details">
+        <div class="row">
+            <div class="todo-backlog col-sm-12 col-md-6 col-lg-6 col-xl-4 col-xxl-4" id="todo">
+                <h1>To do</h1>
+                <div class="todo-Tab">
+                    <div class="card-col-todo">
+                        <div class="content-Container container-fluid">
+                            <div class="add-btn-Container container">
+                                <button class="btn btn-dark addtask-btn" data-bs-toggle="modal" data-bs-target="#addTask" type="button">+</button> <br>
+                            </div>
+                                
+                            <div class="task-list-todo-container">
+                                
+                                <!-- task list display in HTML should stay consistency with this design: -->
+                                <ul class="task-list-todo-content">
+                                    <!-- This area should add user task: -->
+    
+                                    <li class="list-todo list-todo-item-1 "></li>
+                                        <a class="btn btn-outline-dark" data-bs-toggle="collapse" href="#collapse-todo-task-1" role="button" aria-expanded="false" aria-controls="collapse" style="width: 400px";>
+    
+                                            <div class="task-title-badge">
+                                                <h5 class="task-collapse-title">
                                                     Project - Task1
                                                     <span class="badge bg-secondary">Pending</span>
                                                 </h5>
                                             </div>
-
-                                            <div class="edit-btn-container container-fluid">
-                                                <button class="btn btn-primary edit-btn" data-bs-toggle="modal" data-bs-target="#editTask" type="button">
-                                                    Edit
-                                                </button><br>
+                                            <div class="task-collapse-assignto">
+                                                <h6>
+                                                    Assigned to: Example Wong
+                                                </h6>
                                             </div>
-
-                                            <p class="description">
-                                                This task is related to the project A, target aim for re-design the UX, UI in the client project page (Sigma) before deadline.
-                                            </p>
-
-                                            <p class="date-details">
-                                                Due date: 1, Oct, 2022 00:00 - 31 Oct, 2022 23:59
-                                            </p>
-                                            
-                                            <p class="assign-details">
-                                                Assigned to: Example Wong
-                                            </p>
-
-                                            <p class="created-details">
-                                                Created by: Mavis Ho (Scrum Master)
-                                            </p>
-                                            
-                                            <div class="progress">
-                                                <div class="progress-bar bg-dark" role="progressbar" aria-label="Basic-progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" style="width: 0%">
-                                                    0%
+                                        </a>
+    
+                                        <!-- collapse- clicked will show all details with this task: -->
+                                        <div class="collapse todo-task-1-content" id="collapse-todo-task-1">
+                                            <div class="card card-body todo-task-1-details" style="width: 400px;">
+                                                <div class="task-title-container">
+                                                    <h5 class="title-details">
+                                                        Project - Task1
+                                                        <span class="badge bg-secondary">Pending</span>
+                                                    </h5>
+                                                </div>
+    
+                                                <div class="edit-btn-container container-fluid">
+                                                    <button class="btn btn-primary edit-btn" data-bs-toggle="modal" data-bs-target="#editTask" type="button">
+                                                        Edit
+                                                    </button><br>
+                                                </div>
+    
+                                                <p class="description">
+                                                    This task is related to the project A, target aim for re-design the UX, UI in the client project page (Sigma) before deadline.
+                                                </p>
+    
+                                                <p class="date-details">
+                                                    Due date: 1, Oct, 2022 00:00 - 31 Oct, 2022 23:59
+                                                </p>
+                                                
+                                                <p class="assign-details">
+                                                    Assigned to: Example Wong
+                                                </p>
+    
+                                                <p class="created-details">
+                                                    Created by: Mavis Ho (Scrum Master)
+                                                </p>
+                                                
+                                                <div class="progress">
+                                                    <div class="progress-bar bg-dark" role="progressbar" aria-label="Basic-progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" style="width: 0%">
+                                                        0%
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                </li>
-                                
-                                <!-- example task list item 2 -->
-                                <li class="list-todo list-todo-item-2"></li>
-                                    <a class="btn btn-outline-dark" data-bs-toggle="collapse" href="#collapse-todo-task-2" role="button" aria-expanded="false" aria-controls="collapse" style="width: 400px";>
-
-                                        <div class="task-title-badge">
-                                            <h5 class="task-collapse-title">
-                                                Project - Task2
-                                                <span class="badge bg-secondary">Pending</span>
-                                            </h5>
-                                        </div>
-                                        <div class="task-collapse-assignto">
-                                            <h6>
-                                                Assigned to: Example Wong
-                                            </h6>
-                                        </div>
-                                    </a>
-
-                                    <!-- collapse- clicked will show all details with this task: -->
-                                    <div class="collapse todo-task-2-content" id="collapse-todo-task-2">
-                                        <div class="card card-body todo-task-2-details" style="width: 400px;">
-                                            <div class="task-title-container">
-                                                <h5 class="title-details">
+                                    </li>
+                                    
+                                    <!-- example task list item 2 -->
+                                    <li class="list-todo list-todo-item-2"></li>
+                                        <a class="btn btn-outline-dark" data-bs-toggle="collapse" href="#collapse-todo-task-2" role="button" aria-expanded="false" aria-controls="collapse" style="width: 400px";>
+    
+                                            <div class="task-title-badge">
+                                                <h5 class="task-collapse-title">
                                                     Project - Task2
                                                     <span class="badge bg-secondary">Pending</span>
                                                 </h5>
                                             </div>
-
-                                            <div class="edit-btn-container container-fluid">
-                                                <button class="btn btn-primary edit-btn" data-bs-toggle="modal" data-bs-target="#editTask" type="button">
-                                                    Edit
-                                                </button><br>
+                                            <div class="task-collapse-assignto">
+                                                <h6>
+                                                    Assigned to: Example Wong
+                                                </h6>
                                             </div>
-                                            
-                                            <p class="description">
-                                                This task is related to the project A, target aim for re-design the UX, UI in the client project page (Sigma) before deadline.
-                                            </p>
-
-                                            <p class="date-details">
-                                                Due date: 1, Oct, 2022 00:00 - 31 Oct, 2022 23:59
-                                            </p>
-                                            
-                                            <p class="assign-details">
-                                                Assigned to: Example Wong
-                                            </p>
-
-                                            <p class="created-details">
-                                                Created by: Mavis Ho (Scrum Master)
-                                            </p>
-                                            
-                                            <div class="progress">
-                                                <div class="progress-bar bg-dark" role="progressbar" aria-label="Basic-progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" style="width: 0%">
-                                                    0%
+                                        </a>
+    
+                                        <!-- collapse- clicked will show all details with this task: -->
+                                        <div class="collapse todo-task-2-content" id="collapse-todo-task-2">
+                                            <div class="card card-body todo-task-2-details" style="width: 400px;">
+                                                <div class="task-title-container">
+                                                    <h5 class="title-details">
+                                                        Project - Task2
+                                                        <span class="badge bg-secondary">Pending</span>
+                                                    </h5>
+                                                </div>
+    
+                                                <div class="edit-btn-container container-fluid">
+                                                    <button class="btn btn-primary edit-btn" data-bs-toggle="modal" data-bs-target="#editTask" type="button">
+                                                        Edit
+                                                    </button><br>
+                                                </div>
+                                                
+                                                <p class="description">
+                                                    This task is related to the project A, target aim for re-design the UX, UI in the client project page (Sigma) before deadline.
+                                                </p>
+    
+                                                <p class="date-details">
+                                                    Due date: 1, Oct, 2022 00:00 - 31 Oct, 2022 23:59
+                                                </p>
+                                                
+                                                <p class="assign-details">
+                                                    Assigned to: Example Wong
+                                                </p>
+    
+                                                <p class="created-details">
+                                                    Created by: Mavis Ho (Scrum Master)
+                                                </p>
+                                                
+                                                <div class="progress">
+                                                    <div class="progress-bar bg-dark" role="progressbar" aria-label="Basic-progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" style="width: 0%">
+                                                        0%
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                </li>
-
-                                <!-- example task list item 3 -->
-                                <li class="list-todo list-todo-item-3"></li>
-                                    <a class="btn btn-outline-dark" data-bs-toggle="collapse" href="#collapse-todo-task-3" role="button" aria-expanded="false" aria-controls="collapse" style="width: 400px";>
-
-                                        <div class="task-title-badge">
-                                            <h5 class="task-collapse-title">
-                                                Sigma - UX UI
-                                                <span class="badge bg-secondary">Pending</span>
-                                            </h5>
-                                        </div>
-                                        <div class="task-collapse-assignto">
-                                            <h6>
-                                                Assigned to: Example Wong
-                                            </h6>
-                                        </div>
-                                    </a>
-
-                                    <!-- collapse- clicked will show all details with this task: -->
-                                    <div class="collapse todo-task-3-content" id="collapse-todo-task-3">
-                                        <div class="card card-body todo-task-3-details" style="width: 400px;">
-                                            <div class="task-title-container">
-                                                <h5 class="title-details">
+                                    </li>
+    
+                                    <!-- example task list item 3 -->
+                                    <li class="list-todo list-todo-item-3"></li>
+                                        <a class="btn btn-outline-dark" data-bs-toggle="collapse" href="#collapse-todo-task-3" role="button" aria-expanded="false" aria-controls="collapse" style="width: 400px";>
+    
+                                            <div class="task-title-badge">
+                                                <h5 class="task-collapse-title">
                                                     Sigma - UX UI
                                                     <span class="badge bg-secondary">Pending</span>
                                                 </h5>
                                             </div>
-
-                                            <div class="edit-btn-container container-fluid">
-                                                <button class="btn btn-primary edit-btn" data-bs-toggle="modal" data-bs-target="#editTask" type="button">
-                                                    Edit
-                                                </button><br>
+                                            <div class="task-collapse-assignto">
+                                                <h6>
+                                                    Assigned to: Example Wong
+                                                </h6>
                                             </div>
-                                            
-                                            <p class="description">
-                                                This task is related to the project A, target aim for re-design the UX, UI in the client project page (Sigma) before deadline.
-                                            </p>
-
-                                            <p class="date-details">
-                                                Due date: 1, Oct, 2022 00:00 - 31 Oct, 2022 23:59
-                                            </p>
-                                            
-                                            <p class="assign-details">
-                                                Assigned to: Example Wong
-                                            </p>
-
-                                            <p class="created-details">
-                                                Created by: Mavis Ho (Scrum Master)
-                                            </p>
-                                            
-                                            <div class="progress">
-                                                <div class="progress-bar bg-dark" role="progressbar" aria-label="Basic-progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" style="width: 0%">
-                                                    0%
+                                        </a>
+    
+                                        <!-- collapse- clicked will show all details with this task: -->
+                                        <div class="collapse todo-task-3-content" id="collapse-todo-task-3">
+                                            <div class="card card-body todo-task-3-details" style="width: 400px;">
+                                                <div class="task-title-container">
+                                                    <h5 class="title-details">
+                                                        Sigma - UX UI
+                                                        <span class="badge bg-secondary">Pending</span>
+                                                    </h5>
+                                                </div>
+    
+                                                <div class="edit-btn-container container-fluid">
+                                                    <button class="btn btn-primary edit-btn" data-bs-toggle="modal" data-bs-target="#editTask" type="button">
+                                                        Edit
+                                                    </button><br>
+                                                </div>
+                                                
+                                                <p class="description">
+                                                    This task is related to the project A, target aim for re-design the UX, UI in the client project page (Sigma) before deadline.
+                                                </p>
+    
+                                                <p class="date-details">
+                                                    Due date: 1, Oct, 2022 00:00 - 31 Oct, 2022 23:59
+                                                </p>
+                                                
+                                                <p class="assign-details">
+                                                    Assigned to: Example Wong
+                                                </p>
+    
+                                                <p class="created-details">
+                                                    Created by: Mavis Ho (Scrum Master)
+                                                </p>
+                                                
+                                                <div class="progress">
+                                                    <div class="progress-bar bg-dark" role="progressbar" aria-label="Basic-progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" style="width: 0%">
+                                                        0%
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                </li>
-
-                                <!-- to-do task list li ended here !!!!!! -->
-                            </ul>
-
+                                    </li>
+    
+                                    <!-- to-do task list li ended here !!!!!! -->
+                                </ul>
+    
+                            </div>
                         </div>
-
-
                     </div>
+                </div>
+            </div>
+            
+            
     
-                </div>
-            </div>
-        </div>
-        
-        <!-- Below is the "Add Task Modal": which linked with the button have "+" sign, fyr: button class="btn btn-dark addtask-btn"  to add a task ono to-do column  -->
-        <div class="modal fade" id="addTask" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-scrollable"> <!-- modal-dialog-centered -->
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h1 class="modal-title fs-5" id="ModalLabel">Add Task</h1>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <form class="model-form">
-                        <label for="taskname">
-                            <h4>Project Name:</h4>
-                            <input type="text" name="taskname" placeholder="Project.." />
-                        </label>
-                        <hr>
-
-                        <label for="tasktitle">
-                            <h4>Task Title:</h4>
-                            <input type="text" name="tasktitle" placeholder="Task.." />
-                        </label>
-                        <hr>
-
-                        <label for="description">
-                            <h4>Description:</h4>
-                            <textarea class="form-control" id="description" placeholder="Description here.." class="modal-description"></textarea>
-                        </label>
-                        <hr>
-
-                        <label for="startDate">
-                            <h5>Start From:</h5>
-                            <input type="date" id="startDate" data-display-mode="inline" data-is-range="true" data-close-on-select="false">
-                            <input type="time" id="startTime" name="startTime">
-                        </label>
-                        <br><br>
-
-                        <label for="startDate">
-                            <h5>Due To:</h5>
-                            <input type="date" id="endedDate" data-display-mode="inline" data-is-range="true" data-close-on-select="false">
-                            <input type="time" id="endedTime" name="endedTime">
-                        </label>
-                        <hr>
-
-                        <label for="assignTo">
-                            <h4>Assign To:</h4>
-                        <input type="text" name="assignto" placeholder="Person Name" />
-                        </label>
-                        <hr>
-
-                        <label for="progress">
-                            <h4>Progression(%):</h4>
-                        <input type="number" name="progress" placeholder="Below 100" />
-                        </label>
-                        <hr>
-
-                        <div class="text-center modal-btn-set">
-                            <!-- button type="reset", js have to write a prompt to confirm user it will reset all data which entered in the modal-->
-                            <button type="reset" class="btn btn-secondary cancel-btn reset-btn" data-bs-dismiss="modal" onclick="">Cancel</button>
-
-                            <!-- this button is to submit all data user have entered -->
-                            <button type="submit" name="submit" class="btn btn-dark submit-btn" form="modal-form" onclick="">Create</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-            </div>
-        </div>
-        <!-- add task modal ended -->
-
-
-        <!-- Below is the "Edit Task Modal": which linked with the edit button in task details, fyr: button class="btn btn-dark edit-btn"  to edit the task on columns  -->
-        <div class="modal fade" id="editTask" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-scrollable"> <!-- modal-dialog-centered -->
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h1 class="modal-title fs-5" id="ModalLabel">Edit Task</h1>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <form class="model-form">
-                        <label for="taskname">
-                            <h4>Project Name:</h4>
-                            <input type="text" name="taskname" placeholder="Project.." />
-                        </label>
-                        <hr>
-
-                        <label for="tasktitle">
-                            <h4>Task Title:</h4>
-                            <input type="text" name="tasktitle" placeholder="Task.." />
-                        </label>
-                        <hr>
-
-                        <label for="description">
-                            <h4>Description:</h4>
-                            <textarea class="form-control" id="description" placeholder="Description here.." class="modal-description"></textarea>
-                        </label>
-                        <hr>
-
-                        <h4>Time Period:</h4>
-                        <label for="startDate">
-                            <h5>Start From:</h5>
-                            <input type="date" id="startDate" data-display-mode="inline" data-is-range="true" data-close-on-select="false">
-                            <input type="time" id="startTime" name="startTime">
-                        </label>
-                        <br><br>
-
-                        <label for="startDate">
-                            <h5>Due To:</h5>
-                            <input type="date" id="endedDate" data-display-mode="inline" data-is-range="true" data-close-on-select="false">
-                            <input type="time" id="endedTime" name="endedTime">
-                        </label>
-                        <hr>
-
-                        <label for="assignTo">
-                            <h4>Assign To:</h4>
-                        <input type="text" name="assignto" placeholder="Person Name" />
-                        </label>
-                        <hr>
-
-                        <label for="progress">
-                            <h4>Progression(%):</h4>
-                        <input type="number" name="progress" placeholder="0-100" />
-                        </label>
-                        <hr>
-
-
-                        <div class="text-center modal-btn-set">
-                            <!-- button type="reset", js have to write a prompt to confirm user it will reset all data which entered in the modal-->
-                            <button type="reset" class="btn btn-secondary cancel-btn reset-btn" data-bs-dismiss="modal" onclick="">Cancel</button>
-
-                            <!-- this button is to submit all data user have entered -->
-                            <button type="submit" name="submit" class="btn btn-dark submit-btn" form="modal-form" onclick="">Save</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-            </div>
-        </div>
-        <!-- edit task modal ended -->
-    
-
-        <!-- The second col - doing -->
-        <div class="doing">
-            <h1>Doing</h1>
-            <div class="doing-Tab">
-                <div class="card-col-doing">
-                    <div class="content-Container container-fluid">
-                        <div class="task-list-doing-container">
+            <!-- The second col - doing -->
+            <div class="doing col-sm-12 col-md-6 col-lg-6 col-xl-4 col-xxl-4" id="doing">
+                <h1>Doing</h1>
+                <div class="doing-Tab">
+                    <div class="card-col-doing">
+                        <div class="content-Container container-fluid">
+                            <div class="task-list-doing-container">
+                                
+                                <!-- task list display in HTML should stay consistency with this design: -->
+                                <ul class="task-list-doing-content">
+                                    <!-- This area should add user task: -->
                             
-                            <!-- task list display in HTML should stay consistency with this design: -->
-                            <ul class="task-list-doing-content">
-                                <!-- This area should add user task: -->
-                        
-                                <li class="list-doing list-doing-item-1"></li>
-                                    <a class="btn btn-outline-dark" data-bs-toggle="collapse" href="#collapse-doing-task-1" role="button" aria-expanded="false" aria-controls="collapse" style="width: 400px";>
-                        
-                                        <div class="task-title-badge">
-                                            <h5 class="task-collapse-title">
-                                                Project - Task1
-                                                <span class="badge bg-warning">
-                                                    Doing
-                                                </span>
-                                            </h5>
-                                        </div>
-                                        <div class="task-collapse-assignto">
-                                            <h6>
-                                                Assigned to: Example Wong
-                                            </h6>
-                                        </div>
-                                    </a>
-                        
-                                    <!-- collapse- clicked will show all details with this task: -->
-                                    <div class="collapse doing-task-1-content" id="collapse-doing-task-1">
-                                        <div class="card card-body doing-task-1-details" style="width: 400px;">
-                                            <div class="task-title-container">
-                                                <h5 class="title-details">
+                                    <li class="list-doing list-doing-item-1"></li>
+                                        <a class="btn btn-outline-dark" data-bs-toggle="collapse" href="#collapse-doing-task-1" role="button" aria-expanded="false" aria-controls="collapse" style="width: 400px";>
+                            
+                                            <div class="task-title-badge">
+                                                <h5 class="task-collapse-title">
                                                     Project - Task1
                                                     <span class="badge bg-warning">
                                                         Doing
                                                     </span>
                                                 </h5>
                                             </div>
-                        
-                                            <div class="edit-btn-container container-fluid">
-                                                <button class="btn btn-primary edit-btn" data-bs-toggle="modal" data-bs-target="#editTask" type="button">
-                                                    Edit
-                                                </button><br>
+                                            <div class="task-collapse-assignto">
+                                                <h6>
+                                                    Assigned to: Example Wong
+                                                </h6>
                                             </div>
-                        
-                                            <p class="description">
-                                                This task is related to the project A, target aim for re-design the UX, UI in the client project page (Sigma) before deadline.
-                                            </p>
-                        
-                                            <p class="date-details">
-                                                Due date: 1, Oct, 2022 00:00 - 31 Oct, 2022 23:59
-                                            </p>
-                                            
-                                            <p class="assign-details">
-                                                Assigned to: Example Wong
-                                            </p>
-                        
-                                            <p class="created-details">
-                                                Created by: Mavis Ho (Scrum Master)
-                                            </p>
-                                            
-                                            <div class="progress">
-                                                <div class="progress-bar bg-primary progress-bar-striped progress-bar-animated" role="progressbar" aria-label="Basic-progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="75" style="width: 75%">
-                                                    75%
+                                        </a>
+                            
+                                        <!-- collapse- clicked will show all details with this task: -->
+                                        <div class="collapse doing-task-1-content" id="collapse-doing-task-1">
+                                            <div class="card card-body doing-task-1-details" style="width: 400px;">
+                                                <div class="task-title-container">
+                                                    <h5 class="title-details">
+                                                        Project - Task1
+                                                        <span class="badge bg-warning">
+                                                            Doing
+                                                        </span>
+                                                    </h5>
+                                                </div>
+                            
+                                                <div class="edit-btn-container container-fluid">
+                                                    <button class="btn btn-primary edit-btn" data-bs-toggle="modal" data-bs-target="#editTask" type="button">
+                                                        Edit
+                                                    </button><br>
+                                                </div>
+                            
+                                                <p class="description">
+                                                    This task is related to the project A, target aim for re-design the UX, UI in the client project page (Sigma) before deadline.
+                                                </p>
+                            
+                                                <p class="date-details">
+                                                    Due date: 1, Oct, 2022 00:00 - 31 Oct, 2022 23:59
+                                                </p>
+                                                
+                                                <p class="assign-details">
+                                                    Assigned to: Example Wong
+                                                </p>
+                            
+                                                <p class="created-details">
+                                                    Created by: Mavis Ho (Scrum Master)
+                                                </p>
+                                                
+                                                <div class="progress">
+                                                    <div class="progress-bar bg-primary progress-bar-striped progress-bar-animated" role="progressbar" aria-label="Basic-progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="75" style="width: 75%">
+                                                        75%
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                </li>
-                                
-                        
-                                <li class="list-doing list-doing-item-2 "></li>
-                                    <a class="btn btn-outline-dark" data-bs-toggle="collapse" href="#collapse-doing-task-2" role="button" aria-expanded="false" aria-controls="collapse" style="width: 400px";>
-                        
-                                        <div class="task-title-badge">
-                                            <h5 class="task-collapse-title">
-                                                FoodCanda - Add Language
-                                                <span class="badge bg-warning">Doing</span>
-                                            </h5>
-                                        </div>
-                                        <div class="task-collapse-assignto">
-                                            <h6>
-                                                Assigned to: Example Wong
-                                            </h6>
-                                        </div>
-                                    </a>
-                        
-                                    <!-- collapse- clicked will show all details with this task: -->
-                                    <div class="collapse doing-task-2-content" id="collapse-doing-task-2">
-                                        <div class="card card-body doing-task-2-details" style="width: 400px;">
-                                            <div class="task-title-container">
-                                                <h5 class="title-details">
-                                                    FoodCanda - Add New Language - French
+                                    </li>
+                                    
+                            
+                                    <li class="list-doing list-doing-item-2 "></li>
+                                        <a class="btn btn-outline-dark" data-bs-toggle="collapse" href="#collapse-doing-task-2" role="button" aria-expanded="false" aria-controls="collapse" style="width: 400px";>
+                            
+                                            <div class="task-title-badge">
+                                                <h5 class="task-collapse-title">
+                                                    FoodCanda - Add Language
                                                     <span class="badge bg-warning">Doing</span>
                                                 </h5>
                                             </div>
-                        
-                                            <div class="edit-btn-container container-fluid">
-                                                <button class="btn btn-primary edit-btn" data-bs-toggle="modal" data-bs-target="#editTask" type="button">
-                                                    Edit
-                                                </button><br>
+                                            <div class="task-collapse-assignto">
+                                                <h6>
+                                                    Assigned to: Example Wong
+                                                </h6>
                                             </div>
-                        
-                                            <p class="description">
-                                                This task is related to the client project FoodCanda, target aim for add a new language - french in the client project page before deadline.
-                                            </p>
-                        
-                                            <p class="date-details">
-                                                Due date: 26 Sept, 2022 00:00 - 31 Oct, 2022 23:59
-                                            </p>
-                                            
-                                            <p class="assign-details">
-                                                Assigned to: Example Wong
-                                            </p>
-                        
-                                            <p class="created-details">
-                                                Created by: Mavis Ho (Scrum Master)
-                                            </p>
-                                            
-                                            <div class="progress">
-                                                <div class="progress-bar bg-primary progress-bar-striped progress-bar-animated" role="progressbar" aria-label="Basic-progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="20" style="width: 20%">
-                                                    20%
+                                        </a>
+                            
+                                        <!-- collapse- clicked will show all details with this task: -->
+                                        <div class="collapse doing-task-2-content" id="collapse-doing-task-2">
+                                            <div class="card card-body doing-task-2-details" style="width: 400px;">
+                                                <div class="task-title-container">
+                                                    <h5 class="title-details">
+                                                        FoodCanda - Add New Language - French
+                                                        <span class="badge bg-warning">Doing</span>
+                                                    </h5>
+                                                </div>
+                            
+                                                <div class="edit-btn-container container-fluid">
+                                                    <button class="btn btn-primary edit-btn" data-bs-toggle="modal" data-bs-target="#editTask" type="button">
+                                                        Edit
+                                                    </button><br>
+                                                </div>
+                            
+                                                <p class="description">
+                                                    This task is related to the client project FoodCanda, target aim for add a new language - french in the client project page before deadline.
+                                                </p>
+                            
+                                                <p class="date-details">
+                                                    Due date: 26 Sept, 2022 00:00 - 31 Oct, 2022 23:59
+                                                </p>
+                                                
+                                                <p class="assign-details">
+                                                    Assigned to: Example Wong
+                                                </p>
+                            
+                                                <p class="created-details">
+                                                    Created by: Mavis Ho (Scrum Master)
+                                                </p>
+                                                
+                                                <div class="progress">
+                                                    <div class="progress-bar bg-primary progress-bar-striped progress-bar-animated" role="progressbar" aria-label="Basic-progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="20" style="width: 20%">
+                                                        20%
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                </li>
-                                
-                        
-                                
-                        
-                                <!-- DOING task list li ended here !!!!!! -->
-                            </ul>
+                                    </li>
+                                    
+                            
+                                    
+                            
+                                    <!-- DOING task list li ended here !!!!!! -->
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    
-        <!-- The third col - done -->
-        <div class="done">
-            <h1>Done</h1>
-            <div class="done-Tab">
-                <div class="card-col-done">
-                    <div class="content-Container container-fluid">
-                        <div class="task-list-done-container">
+        
+            <!-- The third col - done -->
+            <div class="done col-sm-12 col-md-12 col-lg-12 col-xl-4 col-xxl-4" id="done">
+                <h1>Done</h1>
+                <div class="done-Tab">
+                    <div class="card-col-done">
+                        <div class="content-Container container-fluid">
+                            <div class="task-list-done-container">
+                                
+                                <!-- task list display in HTML should stay consistency with this design: -->
+                                <ul class="task-list-done-content">
+                                    <!-- This area should add user task: -->
                             
-                            <!-- task list display in HTML should stay consistency with this design: -->
-                            <ul class="task-list-done-content">
-                                <!-- This area should add user task: -->
-                        
-                                <li class="list-done list-done-item-1"></li>
-                                    <a class="btn btn-outline-dark" data-bs-toggle="collapse" href="#collapse-done-task-1" role="button" aria-expanded="false" aria-controls="collapse" style="width: 400px";>
-                        
-                                        <div class="task-title-badge">
-                                            <h5 class="task-collapse-title">
-                                                Project - Task1
-                                                <span class="badge bg-success">
-                                                    Finished
-                                                </span>
-                                            </h5>
-                                        </div>
-                                        <div class="task-collapse-assignto">
-                                            <h6>
-                                                Assigned to: Example Wong
-                                            </h6>
-                                        </div>
-                                    </a>
-                        
-                                    <!-- collapse- clicked will show all details with this task: -->
-                                    <div class="collapse done-task-1-content" id="collapse-done-task-1">
-                                        <div class="card card-body done-task-1-details" style="width: 400px;">
-                                            <div class="task-title-container">
-                                                <h5 class="title-details">
+                                    <li class="list-done list-done-item-1"></li>
+                                        <a class="btn btn-outline-dark" data-bs-toggle="collapse" href="#collapse-done-task-1" role="button" aria-expanded="false" aria-controls="collapse" style="width: 400px";>
+                            
+                                            <div class="task-title-badge">
+                                                <h5 class="task-collapse-title">
                                                     Project - Task1
                                                     <span class="badge bg-success">
                                                         Finished
                                                     </span>
                                                 </h5>
                                             </div>
-                        
-                                            <div class="edit-btn-container container-fluid">
-                                                <button class="btn btn-primary edit-btn" data-bs-toggle="modal" data-bs-target="#editTask" type="button">
-                                                    Edit
-                                                </button><br>
+                                            <div class="task-collapse-assignto">
+                                                <h6>
+                                                    Assigned to: Example Wong
+                                                </h6>
                                             </div>
-                        
-                                            <p class="description">
-                                                This task is related to the project A, target aim for re-design the UX, UI in the client project page (Sigma) before deadline.
-                                            </p>
-                        
-                                            <p class="date-details">
-                                                Due date: 1, Oct, 2022 00:00 - 31 Oct, 2022 23:59
-                                            </p>
-                                            
-                                            <p class="assign-details">
-                                                Assigned to: Example Wong
-                                            </p>
-                        
-                                            <p class="created-details">
-                                                Created by: Mavis Ho (Scrum Master)
-                                            </p>
-                                            
-                                            <div class="progress">
-                                                <div class="progress-bar bg-success" role="progressbar" aria-label="Basic-progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="100" style="width: 100%">
-                                                    100%
+                                        </a>
+                            
+                                        <!-- collapse- clicked will show all details with this task: -->
+                                        <div class="collapse done-task-1-content" id="collapse-done-task-1">
+                                            <div class="card card-body done-task-1-details" style="width: 400px;">
+                                                <div class="task-title-container">
+                                                    <h5 class="title-details">
+                                                        Project - Task1
+                                                        <span class="badge bg-success">
+                                                            Finished
+                                                        </span>
+                                                    </h5>
+                                                </div>
+                            
+                                                <div class="edit-btn-container container-fluid">
+                                                    <button class="btn btn-primary edit-btn" data-bs-toggle="modal" data-bs-target="#editTask" type="button">
+                                                        Edit
+                                                    </button><br>
+                                                </div>
+                            
+                                                <p class="description">
+                                                    This task is related to the project A, target aim for re-design the UX, UI in the client project page (Sigma) before deadline.
+                                                </p>
+                            
+                                                <p class="date-details">
+                                                    Due date: 1, Oct, 2022 00:00 - 31 Oct, 2022 23:59
+                                                </p>
+                                                
+                                                <p class="assign-details">
+                                                    Assigned to: Example Wong
+                                                </p>
+                            
+                                                <p class="created-details">
+                                                    Created by: Mavis Ho (Scrum Master)
+                                                </p>
+                                                
+                                                <div class="progress">
+                                                    <div class="progress-bar bg-success" role="progressbar" aria-label="Basic-progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="100" style="width: 100%">
+                                                        100%
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                </li>
-                                
-                        
-                                
-                        
-                                <!-- DONE task list li ended here !!!!!! -->
-                            </ul>
+                                    </li>
+                                    
+                            
+                                    
+                            
+                                    <!-- DONE task list li ended here !!!!!! -->
+                                </ul>
+                            </div>
                         </div>
-                       
                     </div>
-    
                 </div>
             </div>
         </div>
-
     </div>
 
 
+    <!-- Below is the "Add Task Modal": which linked with the button have "+" sign, fyr: button class="btn btn-dark addtask-btn"  to add a task ono to-do column  -->
+    <div class="modal fade" id="addTask" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable"> <!-- modal-dialog-centered -->
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="ModalLabel">Add Task</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form class="model-form">
+                    <label for="taskname">
+                        <h4>Project Name:</h4>
+                        <input type="text" name="taskname" placeholder="Project.." />
+                    </label>
+                    <hr>
+
+                    <label for="tasktitle">
+                        <h4>Task Title:</h4>
+                        <input type="text" name="tasktitle" placeholder="Task.." />
+                    </label>
+                    <hr>
+
+                    <label for="description">
+                        <h4>Description:</h4>
+                        <textarea class="form-control" id="description" placeholder="Description here.." class="modal-description"></textarea>
+                    </label>
+                    <hr>
+
+                    <label for="startDate">
+                        <h5>Start From:</h5>
+                        <input type="date" id="startDate" data-display-mode="inline" data-is-range="true" data-close-on-select="false">
+                        <input type="time" id="startTime" name="startTime">
+                    </label>
+                    <br><br>
+
+                    <label for="startDate">
+                        <h5>Due To:</h5>
+                        <input type="date" id="endedDate" data-display-mode="inline" data-is-range="true" data-close-on-select="false">
+                        <input type="time" id="endedTime" name="endedTime">
+                    </label>
+                    <hr>
+
+                    <label for="assignTo">
+                        <h4>Assign To:</h4>
+                    <input type="text" name="assignto" placeholder="Person Name" />
+                    </label>
+                    <hr>
+
+                    <label for="progress">
+                        <h4>Progression(%):</h4>
+                    <input type="number" name="progress" placeholder="Below 100" />
+                    </label>
+                    <hr>
+
+                    <div class="text-center modal-btn-set">
+                        <!-- button type="reset", js have to write a prompt to confirm user it will reset all data which entered in the modal-->
+                        <button type="reset" class="btn btn-secondary cancel-btn reset-btn" data-bs-dismiss="modal" onclick="">Cancel</button>
+
+                        <!-- this button is to submit all data user have entered -->
+                        <button type="submit" name="submit" class="btn btn-dark submit-btn" form="modal-form" onclick="">Create</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        </div>
+    </div>
+    <!-- add task modal ended -->
+
+
+    <!-- Below is the "Edit Task Modal": which linked with the edit button in task details, fyr: button class="btn btn-dark edit-btn"  to edit the task on columns  -->
+    <div class="modal fade" id="editTask" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable"> <!-- modal-dialog-centered -->
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="ModalLabel">Edit Task</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form class="model-form">
+                    <label for="taskname">
+                        <h4>Project Name:</h4>
+                        <input type="text" name="taskname" placeholder="Project.." />
+                    </label>
+                    <hr>
+
+                    <label for="tasktitle">
+                        <h4>Task Title:</h4>
+                        <input type="text" name="tasktitle" placeholder="Task.." />
+                    </label>
+                    <hr>
+
+                    <label for="description">
+                        <h4>Description:</h4>
+                        <textarea class="form-control" id="description" placeholder="Description here.." class="modal-description"></textarea>
+                    </label>
+                    <hr>
+
+                    <h4>Time Period:</h4>
+                    <label for="startDate">
+                        <h5>Start From:</h5>
+                        <input type="date" id="startDate" data-display-mode="inline" data-is-range="true" data-close-on-select="false">
+                        <input type="time" id="startTime" name="startTime">
+                    </label>
+                    <br><br>
+
+                    <label for="startDate">
+                        <h5>Due To:</h5>
+                        <input type="date" id="endedDate" data-display-mode="inline" data-is-range="true" data-close-on-select="false">
+                        <input type="time" id="endedTime" name="endedTime">
+                    </label>
+                    <hr>
+
+                    <label for="assignTo">
+                        <h4>Assign To:</h4>
+                    <input type="text" name="assignto" placeholder="Person Name" />
+                    </label>
+                    <hr>
+
+                    <label for="progress">
+                        <h4>Progression(%):</h4>
+                    <input type="number" name="progress" placeholder="0-100" />
+                    </label>
+                    <hr>
+
+
+                    <div class="text-center modal-btn-set">
+                        <!-- button type="reset", js have to write a prompt to confirm user it will reset all data which entered in the modal-->
+                        <button type="reset" class="btn btn-secondary cancel-btn reset-btn" data-bs-dismiss="modal" onclick="">Cancel</button>
+
+                        <!-- this button is to submit all data user have entered -->
+                        <button type="submit" name="submit" class="btn btn-dark submit-btn" form="modal-form" onclick="">Save</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        </div>
+    </div>
+    <!-- edit task modal ended -->
+
+
+    <!-- for device under 1199px width to fast jump: -->
+    <div class="fastjump my-5">
+        <div class="container nav-items-all">
+            <ul>
+                <li><a class="dropdown-item" href="#todo">TO-DO</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#doing">DOING</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#done">DONE</a></li>
+            </ul>
+
+        </div>
+    </div>
+
     <footer>
+        
         <div class="back-to-top">
             <a href="#">
-                <i class="fa-solid fa-arrow-up fa-2xl"> top</i>
+                <i class="fa-solid fa-arrow-up fa-2xl">  &emsp;&nbsp; </i>
             </a>
         </div>
 
         <div class="copyright text-center">
+            <hr>
             &copy; 2022 UI UX Sprint1: Evan, Cecilia, Justin<br>
             &copy; 2022 JS Sprint2: name, name, name, name<br>
             &copy; 2022 The Walt Disney Company<br>
@@ -651,8 +681,20 @@
 
 
 
+    
+
+
+    
     <!-- rwd size: ipad -- resolution width x height: 820x1180(air) 768x1024(mini)-->
     <!-- state what to hide and what to display -->
+    
+    <!-- <ul class="nav nav-tabs">
+        <li class="active"><a href="#">Home</a></li>
+        <li class=""><a href="#">menu1</a></li>
+        <li class=""><a href="#">menu2</a></li>
+        <li class=""><a href="#"></a></li>
+        <li class=""><a href="#"></a></li>
+    </ul> -->
 
 
     <!-- rwd size: mobile -- width under 576px -->
@@ -680,23 +722,6 @@
 
     <!-- js requirement for this website: -->
     
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

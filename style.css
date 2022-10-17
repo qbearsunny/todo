@@ -44,6 +44,7 @@ body {
   justify-content: space-evenly;
   color: white;
   margin: 4% auto;
+  overflow: hidden;
 }
 
 /* Google Fonts */
@@ -65,6 +66,7 @@ body {
   height: 100%;
   overflow: auto;
   color: black;
+  overflow-x: hidden;
 }
 
 .doing-Tab{
@@ -73,6 +75,7 @@ body {
   height: 100%;
   overflow: auto;
   color: black;
+  overflow-x: hidden;
 }
 
 .done-Tab {
@@ -81,6 +84,7 @@ body {
   height: 100%;
   overflow: auto;
   color: black;
+  overflow-x: hidden;
 }
 
 .card-col-todo {
@@ -113,7 +117,24 @@ body {
 .content-Container {
   width: 100%;
   min-height: 80vh;
+  /* height: 200vh; */
 }
+
+.task-list-todo-container {
+  display: flex;
+  justify-content: center;
+}
+
+.task-list-doing-container {
+  display: flex;
+  justify-content: center;
+}
+
+.task-list-done-container {
+  display: flex;
+  justify-content: center;
+}
+
 
 .add-btn-Container{
   display: flex;
@@ -140,6 +161,11 @@ body {
   
 }
 
+.modal-content {
+  background: lightskyblue;
+}
+
+
 .modal-title {
   font-size: 2rem!important;
   text-align: center!important;
@@ -152,7 +178,7 @@ body {
 }
 
 .modal-btn-set > .submit-btn:hover {
-  background-color: lightskyblue;
+  background-color: blue;
   font-weight: 900;
 }
 /* add task modal ended*/
@@ -213,5 +239,73 @@ footer > .back-to-top {
 }
 
 footer > .back-to-top > a {
-  color: lightgrey;
+  color: white;
+}
+
+footer > .back-to-top > a:hover {
+  color: black;
+}
+
+.fastjump > .nav-items-all > ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-around;
+  color: white;
+  font-weight: 900;
+  font-size: 1.85rem;
+  font-family: 'Permanent Marker', cursive;
+}
+
+.fastjump > .nav-items-all > ul > li:hover {
+  animation-name: shine-glow;
+  animation-duration: 1s;
+  animation-delay: 0s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+@keyframes shine-glow {
+  0% {color:white;}
+  10% {color: lightgrey;opacity: 0.765;}
+  16% {color: lightgrey;opacity: 0.455;}
+  25% {color: lightgrey;opacity: 0.333;}
+  33.33% {color: lightgrey;opacity: 0.222;}
+  37.5% {color: lightyellow;opacity: 0.333;}
+  50% {color: lightyellow;opacity: 0.985;}
+  62.5% {color: yellow; opacity: 0.333;}
+  75% {color: yellow; opacity: 0.555;}
+  83.34% {color: yellow; opacity: 0.888;}
+  100% {color: yellow;}
+}
+
+
+/* responsive */
+@media (min-width: 1400px) {
+  .fastjump {
+    display: none;
+  }
+}
+@media (max-width: 1399px) {
+  .fastjump {
+    display: none;
+  }
+}
+@media (max-width: 1199px) {
+  .fastjump {
+    display: revert;
+  }
+}
+@media (max-width: 991px) {
+  .fastjump {
+    display: revert;
+  }
+}
+@media (max-width: 768px) {
+  .fastjump {
+    display: revert;
+  }
+}
+@media (max-width: 575px) {
+  .fastjump {
+    display: revert;
+  }
 }
