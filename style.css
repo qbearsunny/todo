@@ -1,69 +1,104 @@
-body{
-    height: 100vh;
+body {
+  height: 100vh;
 }
 
 
-.bg_image{
-    height: 100%;
-    background-image: url('bg_img.jpg');
-    filter: blur(11px);
-    background-position: center;
-    background-repeat: repeat;
+.background {
+    height: 45px;
+    background-image: url("toystory.jpeg");
     background-size: cover;
-    display: block;
+}
+.blank{
+    height:150px
+}
+
+.navbar-brand{
+    font-family: 'Alfa Slab One', cursive;
+    font-weight: 700;
 }
 
 
-.bigcontainer{
-    width: 100vw;
+
+
+
+.bg_image {
+  height: 100%;
+  background-image: url("bg_img.jpg");
+  filter: blur(11px);
+  background-position: center;
+  background-repeat: repeat;
+  background-size: cover;
+  display: block;
+}
+
+.bigcontainer {
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  position: absolute;
+  top: 10%;
+  left: auto;
+}
+
+.title {
+  font-size: 1.7rem;
+  text-decoration: wavy;
+  text-align: center;
+}
+
+.accordion {
+  margin: 10px;
+  --#{$prefix}accordion-color: red;
+  $accordion-icon-width: 250px;
+}
+
+
+
+
+
+.accordion-body{
     display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    position: absolute;
-    top: 10%;
-    left: auto; 
+    flex-direction: column;
+    flex-wrap: wrap;
 }
 
-.title{
-    font-size: 1.7rem;
-    text-decoration: wavy;
-    text-align: center;
+.description{
+    height: 60px;
 }
 
-
-
-.accordion{
-    margin: 10px;
-    --#{$prefix}accordion-color: red;
-    $accordion-icon-width: 250px;
-}
-
-.box_frame{
-    width: 30vw;
-    height: 80vh;
-    background-color: rgba(255, 255, 255, 0.4);
-}
-
-.progress{
-    margin-right: 45%;
-}
-
-.right{
-    text-align: right;
-    margin-left: auto;
-    margin-right: 0;
-    
+.button_container{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
 }
 
 
+.box_frame {
+  width: 30vw;
+  height: 80vh;
+  background-color: rgba(255, 255, 255, 0.4);
+}
 
-.accordion-button:not(.collapsed)::after {display:none}
+.progress {
+  margin-right: 45%;
+}
 
-.accordion-button:not(.collapsed)::after {visibility:hidden}
+.right {
+  text-align: right;
+  margin-left: auto;
+  margin-right: 0;
+}
 
-.accordion-button::after {display:none}
+.accordion-button:not(.collapsed)::after {
+  display: none;
+  visibility: hidden;
+}
 
-.accordion-button::after {visibility:hidden}
+.accordion-button::after {
+  display: none;
+  visibility: hidden;
+}
 /* .right{
     float: right;
 } */
