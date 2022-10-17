@@ -54,6 +54,16 @@ body{
     margin-right: 0;
     
 }
+
+
+
+.accordion-button:not(.collapsed)::after {display:none}
+
+.accordion-button:not(.collapsed)::after {visibility:hidden}
+
+.accordion-button::after {display:none}
+
+.accordion-button::after {visibility:hidden}
 /* .right{
     float: right;
 } */
