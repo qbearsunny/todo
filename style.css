@@ -2,9 +2,9 @@ body {
   height: 100vh;
 }
 
-
+/* nav bar */
 .background {
-    height: 45px;
+    height: 55px;
     background-image: url("toystory.jpeg");
     background-size: cover;
 }
@@ -20,7 +20,7 @@ body {
 
 
 
-
+/* page bg setting */
 .bg_image {
   height: 100%;
   background-image: url("bg_img.jpg");
@@ -41,20 +41,28 @@ body {
   left: auto;
 }
 
+
+/*box frame setting*/
 .title {
   font-size: 1.7rem;
-  text-decoration: wavy;
+  text-decoration: underline;
   text-align: center;
 }
 
-.accordion {
-  margin: 10px;
-  --#{$prefix}accordion-color: red;
-  $accordion-icon-width: 250px;
+.box_frame {
+  width: 30vw;
+  height: 80vh;
+  background-color: rgba(255, 255, 255, 0.4);
 }
 
 
 
+
+
+/*accordion task*/
+.accordion {
+  margin: 10px;
+}
 
 
 .accordion-body{
@@ -63,6 +71,19 @@ body {
     flex-wrap: wrap;
 }
 
+.accordion-button:not(.collapsed)::after {
+    display: none;
+    visibility: hidden;
+  }
+  
+  .accordion-button::after {
+    display: none;
+    visibility: hidden;
+  }
+
+
+
+/*inside task*/ 
 .description{
     height: 60px;
 }
@@ -73,32 +94,18 @@ body {
     align-items: center;
 }
 
-
-.box_frame {
-  width: 30vw;
-  height: 80vh;
-  background-color: rgba(255, 255, 255, 0.4);
-}
-
 .progress {
   margin-right: 45%;
 }
 
+
+
+
+
+
+/*make text align right*/
 .right {
   text-align: right;
   margin-left: auto;
   margin-right: 0;
 }
-
-.accordion-button:not(.collapsed)::after {
-  display: none;
-  visibility: hidden;
-}
-
-.accordion-button::after {
-  display: none;
-  visibility: hidden;
-}
-/* .right{
-    float: right;
-} */
