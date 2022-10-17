@@ -1,0 +1,217 @@
+html {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  
+  /* background-img */
+  background-image: url("./images/andy_room.jpeg");
+  background-size: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  /* background-position-y: 50%; */
+}
+
+
+/* navbar */
+.navbar {
+  margin-left: 2.5%;
+  margin-right: 2.5%;
+  min-height: 30px;
+  font-size: 1.25rem;
+}
+
+.logoCaption {
+  font-size: 1.5rem;
+}
+
+.nav-items-all {
+  font-size: 1.6rem;
+}
+
+.nav-item {
+  margin: 0 5%;
+}
+
+
+/* Task  -  Planning !!!!!!!!!!!!! */
+.taskPlanning {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  color: white;
+  margin: 4% auto;
+}
+
+/* Google Fonts */
+.todo-backlog > h1 {
+  font-family: 'Permanent Marker', cursive;
+}
+
+.doing > h1 {
+  font-family: 'Permanent Marker', cursive;
+}
+
+.done > h1 {
+  font-family: 'Permanent Marker', cursive;
+}
+
+.todo-Tab {
+  box-sizing: border-box;
+  display: block;
+  height: 100%;
+  overflow: auto;
+  color: black;
+}
+
+.doing-Tab{
+  box-sizing: border-box;
+  display: block;
+  height: 100%;
+  overflow: auto;
+  color: black;
+}
+
+.done-Tab {
+  box-sizing: border-box;
+  display: block;
+  height: 100%;
+  overflow: auto;
+  color: black;
+}
+
+.card-col-todo {
+  min-height: 100vh; /* if task exist over height adjust this height */
+  min-width: 25vw;
+  background-color: lightgrey;
+  opacity: 0.888;
+  border-radius: 3.2%;
+  
+}
+
+.card-col-doing {
+  min-height: 100vh; /* if task exist over height adjust this height */
+  min-width: 25vw;
+  background-color: lightgrey;
+  opacity: 0.968;
+  border-radius: 3.2%;
+  
+}
+
+.card-col-done {
+  min-height: 100vh; /* if task exist over height adjust this height */
+  min-width: 25vw;
+  background-color: lightgrey;
+  opacity: 0.999;
+  border-radius: 3.2%;
+  
+}
+
+.content-Container {
+  width: 100%;
+  min-height: 80vh;
+}
+
+.add-btn-Container{
+  display: flex;
+  justify-content: end;
+}
+
+.addtask-btn {
+  width: 48px;
+  height: 48px;
+  font-size: 1.5rem;
+  padding-right: 12px;
+  margin: 12px 0 12px 0;
+}
+
+.addtask-btn:hover {
+  background-color: lightskyblue;
+  color: black;
+}
+
+
+/* add task modal */
+.modal {
+  color: black;
+  
+}
+
+.modal-title {
+  font-size: 2rem!important;
+  text-align: center!important;
+}
+
+.modal-btn-set > .cancel-btn:hover {
+  background-color: red;
+  font-weight: 900;
+  
+}
+
+.modal-btn-set > .submit-btn:hover {
+  background-color: lightskyblue;
+  font-weight: 900;
+}
+/* add task modal ended*/
+
+
+/* task when added to TO-DO area */
+.task-list-todo-content {
+  list-style-type: none;
+  padding: 0 3% 0 3%;
+  margin: 0;
+}
+
+.task-list-todo-content > li {
+  margin-bottom: 30px;
+}
+
+.edit-btn-container {
+  display: flex;
+  justify-content: end;
+}
+
+
+/* task when added to DOING area */
+.task-list-doing-content {
+  list-style-type: none;
+  padding: 3% 3% 0 3%;
+  margin: 0;
+}
+
+.task-list-doing-content > li {
+  margin-bottom: 30px;
+}
+
+
+/* task when added to DONE area */
+.task-list-done-content {
+  list-style-type: none;
+  padding: 3% 3% 0 3%;
+  margin: 0;
+}
+
+.task-list-done-content > li {
+  margin-bottom: 30px;
+}
+
+
+/* footer */
+footer {
+  margin: 30px auto;
+  font-size: 1.25rem;
+  color: white;
+  font-weight: 700;
+}
+
+footer > .back-to-top {
+  display: flex;
+  justify-content: end;
+}
+
+footer > .back-to-top > a {
+  color: lightgrey;
+}
